@@ -1,7 +1,7 @@
 === Framework Test ===
 Contributors: technote0space
 Tags: wp-content-framework
-Requires at least: 3.9
+Requires at least: 4.6
 Requires PHP: 5.6
 Tested up to: 5.2.2
 Stable tag: 0.0.1
