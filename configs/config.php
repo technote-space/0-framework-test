@@ -12,9 +12,6 @@ if ( ! defined( 'FRAMEWORK_TEST' ) ) {
 
 return [
 
-	// required wordpress version
-	'required_wordpress_version' => '5.0',
-
 	// github repo
-	'github_repo'                => 'technote-space/test-travis',
+	'github_repo' => 'wp-content-framework/0-framework-test',
 ];
