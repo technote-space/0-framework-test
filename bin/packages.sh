@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+set -e
+
+packages+=( "wp-content-framework/core" )
+packages+=( "wp-content-framework/common" )
+packages+=( "wp-content-framework/cache" )
+packages+=( "wp-content-framework/db" )
+packages+=( "wp-content-framework/presenter" )
+packages+=( "wp-content-framework/view" )
+packages+=( "wp-content-framework/cron" )
+packages+=( "wp-content-framework/controller" )
+packages+=( "wp-content-framework/admin" )
+packages+=( "wp-content-framework/api" )
+packages+=( "wp-content-framework/update" )
+packages+=( "wp-content-framework/update_check" )
+packages+=( "wp-content-framework/upgrade" )
+packages+=( "wp-content-framework/mail" )
+packages+=( "wp-content-framework/log" )
+packages+=( "wp-content-framework/post" )
+packages+=( "wp-content-framework/device" )
+packages+=( "wp-content-framework/editor" )
+packages+=( "wp-content-framework/social" )
+packages+=( "wp-content-framework/session" )
+packages+=( "wp-content-framework/custom_post" )
+packages+=( "wp-content-framework/test" )
