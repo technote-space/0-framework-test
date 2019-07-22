@@ -29,8 +29,3 @@ This plugin needs PHP5.6 or higher.
 == Screenshots ==
 
 == Upgrade Notice ==
-
-= 0.0.1 (20xx/yy/zz) =
-
-* First release
-
