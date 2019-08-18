@@ -14,7 +14,7 @@
     "wp-content-framework/core": "^0.0.59",
     "wp-content-framework/common": "^0.0.54",
     "wp-content-framework/cache": "^0.0.14",
-    "wp-content-framework/db": "^0.0.21",
+    "wp-content-framework/db": "^0.0.22",
     "wp-content-framework/presenter": "^0.0.21",
     "wp-content-framework/view": "^0.0.9",
     "wp-content-framework/cron": "^0.0.12",
