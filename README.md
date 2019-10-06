@@ -40,10 +40,9 @@ WP Content Framework テスト用
   - JavaScript
     - Jest
 - coverage
-  - Coveralls
+  - codecov
 - deploy
   - GitHub releases
-  - WP Directory
 
 ## Dependency
 [Scripts for Travis CI](https://github.com/wp-content-framework/travis-ci)
