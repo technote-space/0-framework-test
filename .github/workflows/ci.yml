@@ -93,7 +93,7 @@ jobs:
           node-version: ${{ matrix.node }}
       - name: Prepare setting
         run: git clone --depth=1 https://github.com/wp-content-framework/travis-ci.git travis-ci && bash travis-ci/bin/prepare.sh
-      - name: Check code style
+      - name: Run tests
         run: bash travis-ci/bin/js/js-test.sh
       - name: Codecov
         run: curl -s https://codecov.io/bash | bash -s -- -t $CODECOV_TOKEN -f $COVERAGE_FILE
