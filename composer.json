@@ -108,7 +108,7 @@
     "bin:download": [
       "mkdir -p ./travis-ci/.git",
       "chmod -R +w ./travis-ci/.git && rm -rdf ./travis-ci",
-      "rm -f ./tests/bootstrap.php ./.coveralls.yml ./phpcs.xml ./phpmd.xml phpunit.xml",
+      "rm -f ./tests/bootstrap.php ./phpcs.xml ./phpmd.xml phpunit.xml",
       "git clone --depth=1 https://github.com/wp-content-framework/travis-ci.git travis-ci"
     ],
     "bin:prepare": "TRAVIS_BUILD_DIR=$(cd $(dirname $0); pwd) ACTIVATE_POPULAR_PLUGINS=1 bash ./travis-ci/bin/prepare.sh",
