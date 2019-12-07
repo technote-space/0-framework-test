@@ -1,6 +1,6 @@
 on:
   schedule:
-    - cron: 0 17 * * 5
+    - cron: 0 17 * * *
   pull_request:
     types: [opened, synchronize, reopened, closed]
 
@@ -22,8 +22,8 @@ jobs:
           GLOBAL_INSTALL_PACKAGES: npm-check-updates
           EXECUTE_COMMANDS: |
             git clone --depth=1 https://github.com/wp-content-framework/travis-ci.git travis-ci
-            bash travis-ci/bin/update/composer.sh
-            bash travis-ci/bin/update/package.sh
+            travis-ci/bin/update/composer.sh
+            travis-ci/bin/update/package.sh
           COMMIT_MESSAGE: 'chore: update dependencies'
           PR_BRANCH_NAME: 'chore-update-${PR_ID}'
           PR_TITLE: 'chore: update dependencies (${PR_MERGE_REF})'
