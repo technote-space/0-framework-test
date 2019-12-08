@@ -21,9 +21,9 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           GLOBAL_INSTALL_PACKAGES: npm-check-updates
           EXECUTE_COMMANDS: |
-            git clone --depth=1 https://github.com/wp-content-framework/travis-ci.git travis-ci
-            travis-ci/bin/update/composer.sh
-            travis-ci/bin/update/package.sh
+            sudo git clone --depth=1 https://github.com/wp-content-framework/travis-ci.git travis-ci
+            sudo bash travis-ci/bin/update/composer.sh
+            sudo bash travis-ci/bin/update/package.sh
           COMMIT_MESSAGE: 'chore: update dependencies'
           PR_BRANCH_NAME: 'chore-update-${PR_ID}'
           PR_TITLE: 'chore: update dependencies (${PR_MERGE_REF})'
