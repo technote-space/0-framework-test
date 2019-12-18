@@ -54,3 +54,6 @@ WP Content Framework テスト用
 
 ## プラグイン作成用フレームワーク
 [WP Content Framework](https://github.com/wp-content-framework/core)
+
+## test
+
