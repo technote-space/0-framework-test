@@ -29,4 +29,6 @@ jobs:
           PR_DEFAULT_BRANCH_PREFIX: release/
           PR_DEFAULT_BRANCH_NAME: ${PATCH_VERSION}
           PR_DEFAULT_BRANCH_TITLE: release/${PATCH_VERSION}
-          TARGET_BRANCH_PREFIX: release/
+          TARGET_BRANCH_PREFIX: |
+            release/
+            test/
