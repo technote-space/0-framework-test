@@ -27,8 +27,7 @@ logs
 
 !tests/bin/**/*.sh
 coverage/
-/vendor/*
-!/vendor/wp-content-framework
+/vendor
 /travis-ci
 
 /phpcs.xml
