@@ -22,6 +22,7 @@ jobs:
 
             bash .github/workflows/.tmp/workflows/wp-plugin/copy.sh test-releases php-js-test
             sed -i "s/WP_VERSION: \[.\+$/WP_VERSION: ['latest', '4.6']/" .github/workflows/ci.yml
+            sed -i '29i \ \ \ \ \ \ \ \ \ \ \ \ rm -rdf vendor' .github/workflows/update-dependencies.yml
 
             rm -rdf .github/workflows/.tmp
           COMMIT_MESSAGE: 'chore: sync workflows'
