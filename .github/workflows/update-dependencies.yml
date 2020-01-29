@@ -1,8 +1,10 @@
 on:
   schedule:
-    - cron: 0 17 * * 5
+    - cron: 0 17 * * 6
   pull_request:
     types: [opened, synchronize, reopened, closed]
+  repository_dispatch:
+    types: [update-deps]
 
 name: Update dependencies
 
@@ -12,7 +14,7 @@ env:
   TRAVIS_BUILD_DIR: ${{ github.workspace }}
 
 jobs:
-  release:
+  update:
     name: Update dependencies
     runs-on: ubuntu-latest
     steps:
@@ -24,6 +26,7 @@ jobs:
           EXECUTE_COMMANDS: |
             composer bin:download
             composer bin:update
+            rm -rdf vendor
           COMMIT_MESSAGE: 'chore: update dependencies'
           PR_BRANCH_NAME: 'chore-update-${PR_ID}'
           PR_TITLE: 'chore: update dependencies (${PR_MERGE_REF})'
