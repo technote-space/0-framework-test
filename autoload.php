@@ -4,7 +4,7 @@
  * Plugin URI: https://github.com/wp-content-framework/0-framework-test
  * Description: Test plugin for WP Content Framework
  * Author: Technote
- * Version: 0.0.4
+ * Version: 0.0.5
  * Author URI: https://technote.space
  * Text Domain: framework-test
  * Domain Path: /languages/

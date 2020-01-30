@@ -36,5 +36,4 @@ coverage/
 /phpunit.xml
 /tests/bootstrap.php
 /.plugin
-composer.lock
 !/bin
