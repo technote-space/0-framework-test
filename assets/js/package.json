@@ -14,11 +14,12 @@
     "build": "webpack --mode production --config webpack.config.js",
     "update": "ncu -u && yarn install && yarn upgrade && yarn audit"
   },
-  "author": "Technote <technote.space@gmail.com> (https://technote.space)",
-  "license": "MIT",
-  "dependencies": {
-    "classnames": "^2.2.6"
+  "author": {
+    "name": "Technote",
+    "email": "technote.space@gmail.com",
+    "url": "https://technote.space"
   },
+  "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.8.4",
     "@babel/plugin-proposal-object-rest-spread": "^7.8.3",
