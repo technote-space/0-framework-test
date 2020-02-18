@@ -6,7 +6,7 @@
     "start": "yarn build",
     "test": "yarn lint && yarn cover",
     "test:update": "yarn lint && yarn cover:update",
-    "lint": "eslint 'src/**/*.js' '__tests__/**/*.js'",
+    "lint": "eslint 'src/**/*.js' '__tests__/**/*.js' --cache",
     "lint:fix": "eslint --fix 'src/**/*.js' '__tests__/**/*.js'",
     "cover": "jest --coverage",
     "cover:update": "jest --coverage --updateSnapshot",
@@ -14,11 +14,12 @@
     "build": "webpack --mode production --config webpack.config.js",
     "update": "ncu -u && yarn install && yarn upgrade && yarn audit"
   },
-  "author": "Technote <technote.space@gmail.com> (https://technote.space)",
-  "license": "MIT",
-  "dependencies": {
-    "classnames": "^2.2.6"
+  "author": {
+    "name": "Technote",
+    "email": "technote.space@gmail.com",
+    "url": "https://technote.space"
   },
+  "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.8.4",
     "@babel/plugin-proposal-object-rest-spread": "^7.8.3",
@@ -30,9 +31,10 @@
     "css-loader": "^3.4.2",
     "duplicate-package-checker-webpack-plugin": "^3.0.0",
     "eslint": "^6.8.0",
+    "hard-source-webpack-plugin": "^0.13.1",
     "jest": "^25.1.0",
     "speed-measure-webpack-plugin": "^1.3.1",
-    "webpack": "^4.41.5",
-    "webpack-cli": "^3.3.10"
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11"
   }
 }
