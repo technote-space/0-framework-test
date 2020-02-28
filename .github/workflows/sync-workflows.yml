@@ -1,6 +1,6 @@
 on:
   schedule:
-    - cron: 0 11 * * 4
+    - cron: 0 11 * * 3
   repository_dispatch:
     types: [sync-workflows]
 
@@ -14,7 +14,6 @@ jobs:
         uses: technote-space/create-pr-action@v1
         with:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           EXECUTE_COMMANDS: |
             rm -rdf .github/workflows/.tmp
             mkdir -p .github/workflows/.tmp
@@ -22,7 +21,7 @@ jobs:
 
             bash .github/workflows/.tmp/workflows/wp-plugin/copy.sh test-releases php-js-test
             sed -i "s/WP_VERSION: \[.\+$/WP_VERSION: ['latest', '4.6']/" .github/workflows/ci.yml
-            sed -i '29i \            rm -rdf vendor' .github/workflows/update-dependencies.yml
+            sed -i '28i \            rm -rdf vendor' .github/workflows/update-dependencies.yml
 
             rm -rdf .github/workflows/.tmp
           COMMIT_MESSAGE: 'chore: sync workflows'
