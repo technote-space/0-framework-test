@@ -25,8 +25,8 @@ jobs:
           EXECUTE_COMMANDS: |
             composer bin:download
             composer bin:update
-          COMMIT_MESSAGE: 'chore: update dependencies'
             rm -rdf vendor
+          COMMIT_MESSAGE: 'chore: update dependencies'
           PR_BRANCH_NAME: 'chore-update-${PR_ID}'
           PR_TITLE: 'chore: update dependencies (${PR_MERGE_REF})'
           PR_DEFAULT_BRANCH_PREFIX: release/
