@@ -27,13 +27,15 @@ logs
 
 !tests/bin/**/*.sh
 coverage/
-/vendor/*
-!/vendor/wp-content-framework
+/vendor
 /travis-ci
+/gh-pages
 
+/.coveralls.yml
 /phpcs.xml
 /phpmd.xml
 /phpunit.xml
 /tests/bootstrap.php
 /.plugin
+/.work
 !/bin
