@@ -1,7 +1,6 @@
 # Framework Test
 
 [![CI Status](https://github.com/wp-content-framework/0-framework-test/workflows/CI/badge.svg)](https://github.com/wp-content-framework/0-framework-test/actions)
-[![Build Status](https://travis-ci.com/wp-content-framework/0-framework-test.svg?branch=master)](https://travis-ci.com/wp-content-framework/0-framework-test)
 [![codecov](https://codecov.io/gh/wp-content-framework/0-framework-test/branch/master/graph/badge.svg)](https://codecov.io/gh/wp-content-framework/0-framework-test)
 [![CodeFactor](https://www.codefactor.io/repository/github/wp-content-framework/0-framework-test/badge)](https://www.codefactor.io/repository/github/wp-content-framework/0-framework-test)
 [![License: GPL v2+](https://img.shields.io/badge/License-GPL%20v2%2B-blue.svg)](http://www.gnu.org/licenses/gpl-2.0.html)
