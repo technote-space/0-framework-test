@@ -16,5 +16,5 @@ return [
 	'required_wordpress_version' => '5.4',
 
 	// github repo
-	'github_repo' => 'wp-content-framework/0-framework-test',
+	'github_repo'                => 'wp-content-framework/0-framework-test',
 ];
