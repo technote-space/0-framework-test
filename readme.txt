@@ -1,10 +1,10 @@
 === Framework Test ===
 Contributors: technote0space
 Tags: wp-content-framework
-Requires at least: 4.6
+Requires at least: 5.4
 Requires PHP: 5.6
-Tested up to: 5.2.2
-Stable tag: 0.0.5
+Tested up to: 5.4
+Stable tag: 0.1.0
 Donate link: https://paypal.me/technote0space
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html

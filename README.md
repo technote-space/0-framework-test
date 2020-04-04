@@ -1,12 +1,11 @@
 # Framework Test
 
 [![CI Status](https://github.com/wp-content-framework/0-framework-test/workflows/CI/badge.svg)](https://github.com/wp-content-framework/0-framework-test/actions)
-[![Build Status](https://travis-ci.com/wp-content-framework/0-framework-test.svg?branch=master)](https://travis-ci.com/wp-content-framework/0-framework-test)
 [![codecov](https://codecov.io/gh/wp-content-framework/0-framework-test/branch/master/graph/badge.svg)](https://codecov.io/gh/wp-content-framework/0-framework-test)
 [![CodeFactor](https://www.codefactor.io/repository/github/wp-content-framework/0-framework-test/badge)](https://www.codefactor.io/repository/github/wp-content-framework/0-framework-test)
 [![License: GPL v2+](https://img.shields.io/badge/License-GPL%20v2%2B-blue.svg)](http://www.gnu.org/licenses/gpl-2.0.html)
 [![PHP: >=5.6](https://img.shields.io/badge/PHP-%3E%3D5.6-orange.svg)](http://php.net/)
-[![WordPress: >=4.6](https://img.shields.io/badge/WordPress-%3E%3D4.6-brightgreen.svg)](https://wordpress.org/)
+[![WordPress: >=5.4](https://img.shields.io/badge/WordPress-%3E%3D5.4-brightgreen.svg)](https://wordpress.org/)
 
 WP Content Framework テスト用
 
@@ -28,7 +27,7 @@ WP Content Framework テスト用
 
 ## 要件
 - PHP 5.6 以上
-- WordPress 4.6 以上
+- WordPress 5.4 以上
 
 ## 構成
 - code check
@@ -41,7 +40,7 @@ WP Content Framework テスト用
   - PHP
     - PHPUnit
       - PHP v5.6 - v7.2
-      - WordPress v4.6 - latest
+      - WordPress latest
   - JavaScript
     - Jest
 - coverage

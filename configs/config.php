@@ -12,6 +12,9 @@ if ( ! defined( 'FRAMEWORK_TEST' ) ) {
 
 return [
 
+	// required wordpress version
+	'required_wordpress_version' => '5.4',
+
 	// github repo
-	'github_repo' => 'wp-content-framework/0-framework-test',
+	'github_repo'                => 'wp-content-framework/0-framework-test',
 ];
