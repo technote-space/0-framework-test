@@ -25,7 +25,6 @@ jobs:
         with:
           EXCLUDE_MERGED: 'true'
       - name: Update dependencies
-            rm -rdf vendor
         id: update_deps
         uses: technote-space/create-pr-action@v2
         with:
