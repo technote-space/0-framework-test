@@ -17,8 +17,8 @@ const set = params => (key, value) => setProperty(params, key, value);
  * @returns {{set: (function(*=, *=)), get: (function(*=, *=): *)}} manager
  */
 export const parameterManager = (params = {}) => {
-	return {
-		get: get(params),
-		set: set(params),
-	};
+  return {
+    get: get(params),
+    set: set(params),
+  };
 };
