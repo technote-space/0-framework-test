@@ -1,6 +1,6 @@
 {
   "name": "framework-test",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "Framework Test",
   "scripts": {
     "start": "yarn build",
