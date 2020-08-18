@@ -1,6 +1,6 @@
 {
   "name": "framework-test",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "Framework Test",
   "scripts": {
     "start": "yarn build",
@@ -21,14 +21,14 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@babel/core": "^7.11.0",
+    "@babel/core": "^7.11.1",
     "@babel/preset-env": "^7.11.0",
-    "babel-jest": "^26.2.2",
+    "babel-jest": "^26.3.0",
     "babel-loader": "^8.1.0",
     "duplicate-package-checker-webpack-plugin": "^3.0.0",
-    "eslint": "^7.5.0",
+    "eslint": "^7.7.0",
     "hard-source-webpack-plugin": "^0.13.1",
-    "jest": "^26.2.2",
+    "jest": "^26.4.0",
     "speed-measure-webpack-plugin": "^1.3.3",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12"
