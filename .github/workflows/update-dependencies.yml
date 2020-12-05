@@ -1,6 +1,6 @@
 on:
   schedule:
-    - cron: 43 19 * * 5
+    - cron: 23 11 * * 0
   pull_request:
     types: [opened, reopened, closed]
   repository_dispatch:
@@ -32,6 +32,11 @@ jobs:
         if: env.RUNNING1
         with:
           EXCLUDE_MERGED: 'true'
+      - name: Switch PHP version
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 7.4
+          tools: composer:v1
       - name: Update dependencies
         if: env.RUNNING1
         id: update_deps

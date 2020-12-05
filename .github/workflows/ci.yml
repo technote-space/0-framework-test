@@ -69,6 +69,12 @@ jobs:
         run: echo "RUNNING=" >> $GITHUB_ENV
         if: "! env.GIT_DIFF"
 
+      - name: Switch PHP version
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 7.4
+          tools: composer:v1
+        if: env.RUNNING
       - name: Get Composer Cache Directory
         id: composer-cache
         run: |
@@ -108,6 +114,11 @@ jobs:
         run: echo "RUNNING=" >> $GITHUB_ENV
         if: "! env.GIT_DIFF"
 
+      - name: Switch PHP version
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 7.4
+          tools: composer:v1
       - name: Get Composer Cache Directory
         id: composer-cache
         run: |
@@ -407,7 +418,7 @@ jobs:
     timeout-minutes: 3
     if: always()
     steps:
-      - uses: technote-space/workflow-conclusion-action@v1
+      - uses: technote-space/workflow-conclusion-action@v2
       - uses: 8398a7/action-slack@v3
         with:
           status: failure
