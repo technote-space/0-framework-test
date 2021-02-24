@@ -1,0 +1,66 @@
+[submodule "packages/wp-content-framework/core"]
+	path = packages/wp-content-framework/core
+	url = https://github.com/wp-content-framework/core.git
+[submodule "packages/wp-content-framework/editor"]
+	path = packages/wp-content-framework/editor
+	url = https://github.com/wp-content-framework/editor.git
+[submodule "packages/wp-content-framework/db"]
+	path = packages/wp-content-framework/db
+	url = https://github.com/wp-content-framework/db.git
+[submodule "packages/wp-content-framework/device"]
+	path = packages/wp-content-framework/device
+	url = https://github.com/wp-content-framework/device.git
+[submodule "packages/wp-content-framework/common"]
+	path = packages/wp-content-framework/common
+	url = https://github.com/wp-content-framework/common.git
+[submodule "packages/wp-content-framework/custom_post"]
+	path = packages/wp-content-framework/custom_post
+	url = https://github.com/wp-content-framework/custom_post.git
+[submodule "packages/wp-content-framework/cache"]
+	path = packages/wp-content-framework/cache
+	url = https://github.com/wp-content-framework/cache.git
+[submodule "packages/wp-content-framework/update_check"]
+	path = packages/wp-content-framework/update_check
+	url = https://github.com/wp-content-framework/update_check.git
+[submodule "packages/wp-content-framework/post"]
+	path = packages/wp-content-framework/post
+	url = https://github.com/wp-content-framework/post.git
+[submodule "packages/wp-content-framework/log"]
+	path = packages/wp-content-framework/log
+	url = https://github.com/wp-content-framework/log.git
+[submodule "packages/wp-content-framework/update"]
+	path = packages/wp-content-framework/update
+	url = https://github.com/wp-content-framework/update.git
+[submodule "packages/wp-content-framework/session"]
+	path = packages/wp-content-framework/session
+	url = https://github.com/wp-content-framework/session.git
+[submodule "packages/wp-content-framework/cron"]
+	path = packages/wp-content-framework/cron
+	url = https://github.com/wp-content-framework/cron.git
+[submodule "packages/wp-content-framework/controller"]
+	path = packages/wp-content-framework/controller
+	url = https://github.com/wp-content-framework/controller.git
+[submodule "packages/wp-content-framework/social"]
+	path = packages/wp-content-framework/social
+	url = https://github.com/wp-content-framework/social.git
+[submodule "packages/wp-content-framework/upgrade"]
+	path = packages/wp-content-framework/upgrade
+	url = https://github.com/wp-content-framework/upgrade.git
+[submodule "packages/wp-content-framework/test"]
+	path = packages/wp-content-framework/test
+	url = https://github.com/wp-content-framework/test.git
+[submodule "packages/wp-content-framework/mail"]
+	path = packages/wp-content-framework/mail
+	url = https://github.com/wp-content-framework/mail.git
+[submodule "packages/wp-content-framework/presenter"]
+	path = packages/wp-content-framework/presenter
+	url = https://github.com/wp-content-framework/presenter.git
+[submodule "packages/wp-content-framework/view"]
+	path = packages/wp-content-framework/view
+	url = https://github.com/wp-content-framework/view.git
+[submodule "packages/wp-content-framework/admin"]
+	path = packages/wp-content-framework/admin
+	url = https://github.com/wp-content-framework/admin.git
+[submodule "packages/wp-content-framework/api"]
+	path = packages/wp-content-framework/api
+	url = https://github.com/wp-content-framework/api.git
