@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ee2ba789a86ba8d4fdb1aacca2b2c53e",
+    "content-hash": "3d4611fd5af9b331d002fb15253bef3f",
     "packages": [
         {
             "name": "matthiasmullie/minify",
@@ -63,20 +63,6 @@
                 "javascript",
                 "minifier",
                 "minify"
-            ],
-            "funding": [
-                {
-                    "url": "https://github.com/[user1",
-                    "type": "github"
-                },
-                {
-                    "url": "https://github.com/matthiasmullie] # Replace with up to 4 GitHub Sponsors-enabled usernames e.g.",
-                    "type": "github"
-                },
-                {
-                    "url": "https://github.com/user2",
-                    "type": "github"
-                }
             ],
             "time": "2021-01-06T15:18:10+00:00"
         },
@@ -179,12 +165,6 @@
                 "mobile detector",
                 "php mobile detect"
             ],
-            "funding": [
-                {
-                    "url": "https://github.com/serbanghita",
-                    "type": "github"
-                }
-            ],
             "time": "2021-02-19T21:22:57+00:00"
         },
         {
@@ -233,20 +213,6 @@
             ],
             "description": "Symfony CssSelector Component",
             "homepage": "https://symfony.com",
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
-            ],
             "time": "2020-10-24T10:57:07+00:00"
         },
         {
@@ -297,12 +263,6 @@
             "keywords": [
                 "gutenberg",
                 "wordpress"
-            ],
-            "funding": [
-                {
-                    "url": "https://paypal.me/technote0space",
-                    "type": "custom"
-                }
             ],
             "time": "2020-11-19T17:33:32+00:00"
         },
@@ -355,12 +315,6 @@
             "keywords": [
                 "gutenberg",
                 "wordpress"
-            ],
-            "funding": [
-                {
-                    "url": "https://paypal.me/technote0space",
-                    "type": "custom"
-                }
             ],
             "time": "2020-12-14T07:00:06+00:00"
         },
@@ -415,17 +369,11 @@
         },
         {
             "name": "wp-content-framework/admin",
-            "version": "v1.0.45",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/wp-content-framework/admin.git",
-                "reference": "aff43cbc8b57458cd4e59f7bc63e4d5a8ff1a30e"
-            },
+            "version": "v1.0.46",
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/wp-content-framework/admin/zipball/aff43cbc8b57458cd4e59f7bc63e4d5a8ff1a30e",
-                "reference": "aff43cbc8b57458cd4e59f7bc63e4d5a8ff1a30e",
-                "shasum": ""
+                "type": "path",
+                "url": "packages/wp-content-framework/admin",
+                "reference": "daebb3bca91fe95a2885c0c5df4088c054a0bfff"
             },
             "require": {
                 "php": ">=5.6.0",
@@ -440,7 +388,33 @@
                 "wp-coding-standards/wpcs": "^2.3"
             },
             "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
+            "scripts": {
+                "prepare": [
+                    "mkdir -p ./fixtures/.git",
+                    "chmod -R +w ./fixtures/.git && rm -rdf ./fixtures",
+                    "rm -f ./phpcs.xml ./phpmd.xml ./phpunit.xml",
+                    "git clone --depth=1 https://github.com/wp-content-framework/fixtures.git fixtures",
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/prepare.sh"
+                ],
+                "test": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/test.sh"
+                ],
+                "phpcs": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpcs.sh"
+                ],
+                "phpmd": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpmd.sh"
+                ],
+                "phpcbf": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpcbf.sh"
+                ],
+                "phpunit": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpunit.sh"
+                ],
+                "packages": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/packages.sh"
+                ]
+            },
             "license": [
                 "GPL-2.0+"
             ],
@@ -457,27 +431,17 @@
                 "framework",
                 "wordpress"
             ],
-            "funding": [
-                {
-                    "url": "https://paypal.me/technote0space",
-                    "type": "custom"
-                }
-            ],
-            "time": "2021-02-17T02:25:57+00:00"
+            "transport-options": {
+                "symlink": true
+            }
         },
         {
             "name": "wp-content-framework/api",
-            "version": "v1.0.40",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/wp-content-framework/api.git",
-                "reference": "3bdf76f1be72450b18a4d8b51dbd45caac1dab44"
-            },
+            "version": "v1.0.41",
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/wp-content-framework/api/zipball/3bdf76f1be72450b18a4d8b51dbd45caac1dab44",
-                "reference": "3bdf76f1be72450b18a4d8b51dbd45caac1dab44",
-                "shasum": ""
+                "type": "path",
+                "url": "packages/wp-content-framework/api",
+                "reference": "f9b104bbc3db33aad87b1ee0fe1c8f261add3ad0"
             },
             "require": {
                 "php": ">=5.6.0",
@@ -491,7 +455,33 @@
                 "wp-coding-standards/wpcs": "^2.3"
             },
             "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
+            "scripts": {
+                "prepare": [
+                    "mkdir -p ./fixtures/.git",
+                    "chmod -R +w ./fixtures/.git && rm -rdf ./fixtures",
+                    "rm -f ./phpcs.xml ./phpmd.xml ./phpunit.xml",
+                    "git clone --depth=1 https://github.com/wp-content-framework/fixtures.git fixtures",
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/prepare.sh"
+                ],
+                "test": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/test.sh"
+                ],
+                "phpcs": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpcs.sh"
+                ],
+                "phpmd": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpmd.sh"
+                ],
+                "phpcbf": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpcbf.sh"
+                ],
+                "phpunit": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpunit.sh"
+                ],
+                "packages": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/packages.sh"
+                ]
+            },
             "license": [
                 "GPL-2.0+"
             ],
@@ -508,27 +498,17 @@
                 "framework",
                 "wordpress"
             ],
-            "funding": [
-                {
-                    "url": "https://paypal.me/technote0space",
-                    "type": "custom"
-                }
-            ],
-            "time": "2021-02-16T12:07:10+00:00"
+            "transport-options": {
+                "symlink": true
+            }
         },
         {
             "name": "wp-content-framework/cache",
             "version": "v1.0.29",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/wp-content-framework/cache.git",
-                "reference": "f8600876e3d65f3053b2d200b8818b210c93e5e5"
-            },
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/wp-content-framework/cache/zipball/f8600876e3d65f3053b2d200b8818b210c93e5e5",
-                "reference": "f8600876e3d65f3053b2d200b8818b210c93e5e5",
-                "shasum": ""
+                "type": "path",
+                "url": "packages/wp-content-framework/cache",
+                "reference": "157affd534f6736edbec42d72cb1a742afc96f3a"
             },
             "require": {
                 "php": ">=5.6.0"
@@ -543,7 +523,33 @@
                 "wp-coding-standards/wpcs": "^2.3"
             },
             "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
+            "scripts": {
+                "prepare": [
+                    "mkdir -p ./fixtures/.git",
+                    "chmod -R +w ./fixtures/.git && rm -rdf ./fixtures",
+                    "rm -f ./phpcs.xml ./phpmd.xml ./phpunit.xml",
+                    "git clone --depth=1 https://github.com/wp-content-framework/fixtures.git fixtures",
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/prepare.sh"
+                ],
+                "test": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/test.sh"
+                ],
+                "phpcs": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpcs.sh"
+                ],
+                "phpmd": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpmd.sh"
+                ],
+                "phpcbf": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpcbf.sh"
+                ],
+                "phpunit": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpunit.sh"
+                ],
+                "packages": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/packages.sh"
+                ]
+            },
             "license": [
                 "GPL-2.0+"
             ],
@@ -560,27 +566,17 @@
                 "framework",
                 "wordpress"
             ],
-            "funding": [
-                {
-                    "url": "https://paypal.me/technote0space",
-                    "type": "custom"
-                }
-            ],
-            "time": "2020-12-23T04:25:36+00:00"
+            "transport-options": {
+                "symlink": true
+            }
         },
         {
             "name": "wp-content-framework/common",
             "version": "v1.0.30",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/wp-content-framework/common.git",
-                "reference": "8cdcd8688cc3a918cc5985cc2633e650d06fe98c"
-            },
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/wp-content-framework/common/zipball/8cdcd8688cc3a918cc5985cc2633e650d06fe98c",
-                "reference": "8cdcd8688cc3a918cc5985cc2633e650d06fe98c",
-                "shasum": ""
+                "type": "path",
+                "url": "packages/wp-content-framework/common",
+                "reference": "01a103726f9f165657e5f584921ff476a009d07f"
             },
             "require": {
                 "php": ">=5.6.0"
@@ -595,7 +591,33 @@
                 "wp-coding-standards/wpcs": "^2.3"
             },
             "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
+            "scripts": {
+                "prepare": [
+                    "mkdir -p ./fixtures/.git",
+                    "chmod -R +w ./fixtures/.git && rm -rdf ./fixtures",
+                    "rm -f ./phpcs.xml ./phpmd.xml ./phpunit.xml",
+                    "git clone --depth=1 https://github.com/wp-content-framework/fixtures.git fixtures",
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/prepare.sh"
+                ],
+                "test": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/test.sh"
+                ],
+                "phpcs": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpcs.sh"
+                ],
+                "phpmd": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpmd.sh"
+                ],
+                "phpcbf": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpcbf.sh"
+                ],
+                "phpunit": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpunit.sh"
+                ],
+                "packages": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/packages.sh"
+                ]
+            },
             "license": [
                 "GPL-2.0+"
             ],
@@ -612,27 +634,17 @@
                 "framework",
                 "wordpress"
             ],
-            "funding": [
-                {
-                    "url": "https://paypal.me/technote0space",
-                    "type": "custom"
-                }
-            ],
-            "time": "2020-12-22T05:40:49+00:00"
+            "transport-options": {
+                "symlink": true
+            }
         },
         {
             "name": "wp-content-framework/controller",
             "version": "v1.0.42",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/wp-content-framework/controller.git",
-                "reference": "166713600c9257c53f20f6b9140c285e6b7551e2"
-            },
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/wp-content-framework/controller/zipball/166713600c9257c53f20f6b9140c285e6b7551e2",
-                "reference": "166713600c9257c53f20f6b9140c285e6b7551e2",
-                "shasum": ""
+                "type": "path",
+                "url": "packages/wp-content-framework/controller",
+                "reference": "be79a6184e6e5420b247fd3298919aed1742baaf"
             },
             "require": {
                 "php": ">=5.6.0",
@@ -646,7 +658,33 @@
                 "wp-coding-standards/wpcs": "^2.3"
             },
             "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
+            "scripts": {
+                "prepare": [
+                    "mkdir -p ./fixtures/.git",
+                    "chmod -R +w ./fixtures/.git && rm -rdf ./fixtures",
+                    "rm -f ./phpcs.xml ./phpmd.xml ./phpunit.xml",
+                    "git clone --depth=1 https://github.com/wp-content-framework/fixtures.git fixtures",
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/prepare.sh"
+                ],
+                "test": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/test.sh"
+                ],
+                "phpcs": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpcs.sh"
+                ],
+                "phpmd": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpmd.sh"
+                ],
+                "phpcbf": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpcbf.sh"
+                ],
+                "phpunit": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpunit.sh"
+                ],
+                "packages": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/packages.sh"
+                ]
+            },
             "license": [
                 "GPL-2.0+"
             ],
@@ -663,27 +701,17 @@
                 "framework",
                 "wordpress"
             ],
-            "funding": [
-                {
-                    "url": "https://paypal.me/technote0space",
-                    "type": "custom"
-                }
-            ],
-            "time": "2021-02-20T16:33:05+00:00"
+            "transport-options": {
+                "symlink": true
+            }
         },
         {
             "name": "wp-content-framework/core",
             "version": "v1.0.37",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/wp-content-framework/core.git",
-                "reference": "77fca54b2b50e4423b8651beea8da21aa5a0b999"
-            },
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/wp-content-framework/core/zipball/77fca54b2b50e4423b8651beea8da21aa5a0b999",
-                "reference": "77fca54b2b50e4423b8651beea8da21aa5a0b999",
-                "shasum": ""
+                "type": "path",
+                "url": "packages/wp-content-framework/core",
+                "reference": "6f3d7162d07c1042a94754caf21eb0fbc24e7fe5"
             },
             "require": {
                 "php": ">=5.6.0",
@@ -705,7 +733,33 @@
                     "autoload.php"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "scripts": {
+                "prepare": [
+                    "mkdir -p ./fixtures/.git",
+                    "chmod -R +w ./fixtures/.git && rm -rdf ./fixtures",
+                    "rm -f ./phpcs.xml ./phpmd.xml ./phpunit.xml",
+                    "git clone --depth=1 https://github.com/wp-content-framework/fixtures.git fixtures",
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/prepare.sh"
+                ],
+                "test": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/test.sh"
+                ],
+                "phpcs": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpcs.sh"
+                ],
+                "phpmd": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpmd.sh"
+                ],
+                "phpcbf": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpcbf.sh"
+                ],
+                "phpunit": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpunit.sh"
+                ],
+                "packages": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/packages.sh"
+                ]
+            },
             "license": [
                 "GPL-2.0+"
             ],
@@ -722,27 +776,17 @@
                 "framework",
                 "wordpress"
             ],
-            "funding": [
-                {
-                    "url": "https://paypal.me/technote0space",
-                    "type": "custom"
-                }
-            ],
-            "time": "2020-12-20T03:51:13+00:00"
+            "transport-options": {
+                "symlink": true
+            }
         },
         {
             "name": "wp-content-framework/cron",
             "version": "v1.0.31",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/wp-content-framework/cron.git",
-                "reference": "8861e480274c44958c0e4e80aef833d4072258cf"
-            },
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/wp-content-framework/cron/zipball/8861e480274c44958c0e4e80aef833d4072258cf",
-                "reference": "8861e480274c44958c0e4e80aef833d4072258cf",
-                "shasum": ""
+                "type": "path",
+                "url": "packages/wp-content-framework/cron",
+                "reference": "224d9ae9235148777c84d09a796bfd8d94af663b"
             },
             "require": {
                 "php": ">=5.6.0"
@@ -755,7 +799,33 @@
                 "wp-coding-standards/wpcs": "^2.3"
             },
             "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
+            "scripts": {
+                "prepare": [
+                    "mkdir -p ./fixtures/.git",
+                    "chmod -R +w ./fixtures/.git && rm -rdf ./fixtures",
+                    "rm -f ./phpcs.xml ./phpmd.xml ./phpunit.xml",
+                    "git clone --depth=1 https://github.com/wp-content-framework/fixtures.git fixtures",
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/prepare.sh"
+                ],
+                "test": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/test.sh"
+                ],
+                "phpcs": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpcs.sh"
+                ],
+                "phpmd": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpmd.sh"
+                ],
+                "phpcbf": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpcbf.sh"
+                ],
+                "phpunit": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpunit.sh"
+                ],
+                "packages": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/packages.sh"
+                ]
+            },
             "license": [
                 "GPL-2.0+"
             ],
@@ -772,27 +842,17 @@
                 "framework",
                 "wordpress"
             ],
-            "funding": [
-                {
-                    "url": "https://paypal.me/technote0space",
-                    "type": "custom"
-                }
-            ],
-            "time": "2021-02-20T11:37:05+00:00"
+            "transport-options": {
+                "symlink": true
+            }
         },
         {
             "name": "wp-content-framework/custom_post",
             "version": "v1.0.38",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/wp-content-framework/custom_post.git",
-                "reference": "dc9a731a5489696e18d0be2099aa39da2e08ab75"
-            },
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/wp-content-framework/custom_post/zipball/dc9a731a5489696e18d0be2099aa39da2e08ab75",
-                "reference": "dc9a731a5489696e18d0be2099aa39da2e08ab75",
-                "shasum": ""
+                "type": "path",
+                "url": "packages/wp-content-framework/custom_post",
+                "reference": "8465bf1203cb34fb7b2d8cec3d2f9d53534b8e58"
             },
             "require": {
                 "php": ">=5.6.0",
@@ -811,7 +871,33 @@
                 "wp-coding-standards/wpcs": "^2.3"
             },
             "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
+            "scripts": {
+                "prepare": [
+                    "mkdir -p ./fixtures/.git",
+                    "chmod -R +w ./fixtures/.git && rm -rdf ./fixtures",
+                    "rm -f ./phpcs.xml ./phpmd.xml ./phpunit.xml",
+                    "git clone --depth=1 https://github.com/wp-content-framework/fixtures.git fixtures",
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/prepare.sh"
+                ],
+                "test": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/test.sh"
+                ],
+                "phpcs": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpcs.sh"
+                ],
+                "phpmd": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpmd.sh"
+                ],
+                "phpcbf": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpcbf.sh"
+                ],
+                "phpunit": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpunit.sh"
+                ],
+                "packages": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/packages.sh"
+                ]
+            },
             "license": [
                 "GPL-2.0+"
             ],
@@ -828,27 +914,17 @@
                 "framework",
                 "wordpress"
             ],
-            "funding": [
-                {
-                    "url": "https://paypal.me/technote0space",
-                    "type": "custom"
-                }
-            ],
-            "time": "2020-12-22T05:40:53+00:00"
+            "transport-options": {
+                "symlink": true
+            }
         },
         {
             "name": "wp-content-framework/db",
             "version": "v1.0.27",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/wp-content-framework/db.git",
-                "reference": "d6cbd65a6b876659d732022b48a15347ad6463de"
-            },
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/wp-content-framework/db/zipball/d6cbd65a6b876659d732022b48a15347ad6463de",
-                "reference": "d6cbd65a6b876659d732022b48a15347ad6463de",
-                "shasum": ""
+                "type": "path",
+                "url": "packages/wp-content-framework/db",
+                "reference": "4f27066b01a1663a97f7032f69d080633ad1c623"
             },
             "require": {
                 "php": ">=5.6.0"
@@ -863,7 +939,33 @@
                 "wp-coding-standards/wpcs": "^2.3"
             },
             "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
+            "scripts": {
+                "prepare": [
+                    "mkdir -p ./fixtures/.git",
+                    "chmod -R +w ./fixtures/.git && rm -rdf ./fixtures",
+                    "rm -f ./phpcs.xml ./phpmd.xml ./phpunit.xml",
+                    "git clone --depth=1 https://github.com/wp-content-framework/fixtures.git fixtures",
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/prepare.sh"
+                ],
+                "test": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/test.sh"
+                ],
+                "phpcs": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpcs.sh"
+                ],
+                "phpmd": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpmd.sh"
+                ],
+                "phpcbf": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpcbf.sh"
+                ],
+                "phpunit": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpunit.sh"
+                ],
+                "packages": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/packages.sh"
+                ]
+            },
             "license": [
                 "GPL-2.0+"
             ],
@@ -880,27 +982,17 @@
                 "framework",
                 "wordpress"
             ],
-            "funding": [
-                {
-                    "url": "https://paypal.me/technote0space",
-                    "type": "custom"
-                }
-            ],
-            "time": "2020-12-17T12:57:10+00:00"
+            "transport-options": {
+                "symlink": true
+            }
         },
         {
             "name": "wp-content-framework/device",
             "version": "v1.0.29",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/wp-content-framework/device.git",
-                "reference": "22105045e41f55a5dd5f325c15f3962e94106ecc"
-            },
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/wp-content-framework/device/zipball/22105045e41f55a5dd5f325c15f3962e94106ecc",
-                "reference": "22105045e41f55a5dd5f325c15f3962e94106ecc",
-                "shasum": ""
+                "type": "path",
+                "url": "packages/wp-content-framework/device",
+                "reference": "f9d87b91834fced3c812cf90bba1adf0a00362b2"
             },
             "require": {
                 "mobiledetect/mobiledetectlib": "^2.8",
@@ -916,7 +1008,33 @@
                 "wp-coding-standards/wpcs": "^2.3"
             },
             "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
+            "scripts": {
+                "prepare": [
+                    "mkdir -p ./fixtures/.git",
+                    "chmod -R +w ./fixtures/.git && rm -rdf ./fixtures",
+                    "rm -f ./phpcs.xml ./phpmd.xml ./phpunit.xml",
+                    "git clone --depth=1 https://github.com/wp-content-framework/fixtures.git fixtures",
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/prepare.sh"
+                ],
+                "test": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/test.sh"
+                ],
+                "phpcs": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpcs.sh"
+                ],
+                "phpmd": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpmd.sh"
+                ],
+                "phpcbf": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpcbf.sh"
+                ],
+                "phpunit": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpunit.sh"
+                ],
+                "packages": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/packages.sh"
+                ]
+            },
             "license": [
                 "GPL-2.0+"
             ],
@@ -933,27 +1051,17 @@
                 "framework",
                 "wordpress"
             ],
-            "funding": [
-                {
-                    "url": "https://paypal.me/technote0space",
-                    "type": "custom"
-                }
-            ],
-            "time": "2020-12-21T13:17:59+00:00"
+            "transport-options": {
+                "symlink": true
+            }
         },
         {
             "name": "wp-content-framework/editor",
             "version": "v1.0.35",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/wp-content-framework/editor.git",
-                "reference": "f4b5765514830735c13bfaa630d8fb90913239ba"
-            },
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/wp-content-framework/editor/zipball/f4b5765514830735c13bfaa630d8fb90913239ba",
-                "reference": "f4b5765514830735c13bfaa630d8fb90913239ba",
-                "shasum": ""
+                "type": "path",
+                "url": "packages/wp-content-framework/editor",
+                "reference": "86665c333fb5fce07fa6a760bfccfdb36dd29b8f"
             },
             "require": {
                 "php": ">=5.6.0",
@@ -969,7 +1077,33 @@
                 "wp-coding-standards/wpcs": "^2.3"
             },
             "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
+            "scripts": {
+                "prepare": [
+                    "mkdir -p ./fixtures/.git",
+                    "chmod -R +w ./fixtures/.git && rm -rdf ./fixtures",
+                    "rm -f ./phpcs.xml ./phpmd.xml ./phpunit.xml",
+                    "git clone --depth=1 https://github.com/wp-content-framework/fixtures.git fixtures",
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/prepare.sh"
+                ],
+                "test": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/test.sh"
+                ],
+                "phpcs": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpcs.sh"
+                ],
+                "phpmd": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpmd.sh"
+                ],
+                "phpcbf": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpcbf.sh"
+                ],
+                "phpunit": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpunit.sh"
+                ],
+                "packages": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/packages.sh"
+                ]
+            },
             "license": [
                 "GPL-2.0+"
             ],
@@ -986,27 +1120,17 @@
                 "framework",
                 "wordpress"
             ],
-            "funding": [
-                {
-                    "url": "https://paypal.me/technote0space",
-                    "type": "custom"
-                }
-            ],
-            "time": "2020-12-17T06:07:32+00:00"
+            "transport-options": {
+                "symlink": true
+            }
         },
         {
             "name": "wp-content-framework/log",
             "version": "v1.0.46",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/wp-content-framework/log.git",
-                "reference": "466c00d08ee9fedaa59e2e2382a6ad74e0ca01dd"
-            },
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/wp-content-framework/log/zipball/466c00d08ee9fedaa59e2e2382a6ad74e0ca01dd",
-                "reference": "466c00d08ee9fedaa59e2e2382a6ad74e0ca01dd",
-                "shasum": ""
+                "type": "path",
+                "url": "packages/wp-content-framework/log",
+                "reference": "f93076d7ae7898970cc0086b92bcc31ba4b40250"
             },
             "require": {
                 "php": ">=5.6.0",
@@ -1022,7 +1146,33 @@
                 "wp-coding-standards/wpcs": "^2.3"
             },
             "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
+            "scripts": {
+                "prepare": [
+                    "mkdir -p ./fixtures/.git",
+                    "chmod -R +w ./fixtures/.git && rm -rdf ./fixtures",
+                    "rm -f ./phpcs.xml ./phpmd.xml ./phpunit.xml",
+                    "git clone --depth=1 https://github.com/wp-content-framework/fixtures.git fixtures",
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/prepare.sh"
+                ],
+                "test": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/test.sh"
+                ],
+                "phpcs": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpcs.sh"
+                ],
+                "phpmd": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpmd.sh"
+                ],
+                "phpcbf": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpcbf.sh"
+                ],
+                "phpunit": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpunit.sh"
+                ],
+                "packages": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/packages.sh"
+                ]
+            },
             "license": [
                 "GPL-2.0+"
             ],
@@ -1039,27 +1189,17 @@
                 "framework",
                 "wordpress"
             ],
-            "funding": [
-                {
-                    "url": "https://paypal.me/technote0space",
-                    "type": "custom"
-                }
-            ],
-            "time": "2021-02-19T06:11:35+00:00"
+            "transport-options": {
+                "symlink": true
+            }
         },
         {
             "name": "wp-content-framework/mail",
-            "version": "v1.0.43",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/wp-content-framework/mail.git",
-                "reference": "900aefc475872b23dd7ef4526bdcc23aedc421d6"
-            },
+            "version": "v1.0.44",
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/wp-content-framework/mail/zipball/900aefc475872b23dd7ef4526bdcc23aedc421d6",
-                "reference": "900aefc475872b23dd7ef4526bdcc23aedc421d6",
-                "shasum": ""
+                "type": "path",
+                "url": "packages/wp-content-framework/mail",
+                "reference": "65be5340f9f112a11b6e3d1bd44e22d8e7c65a9f"
             },
             "require": {
                 "php": ">=5.6.0",
@@ -1074,7 +1214,33 @@
                 "wp-coding-standards/wpcs": "^2.3"
             },
             "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
+            "scripts": {
+                "prepare": [
+                    "mkdir -p ./fixtures/.git",
+                    "chmod -R +w ./fixtures/.git && rm -rdf ./fixtures",
+                    "rm -f ./phpcs.xml ./phpmd.xml ./phpunit.xml",
+                    "git clone --depth=1 https://github.com/wp-content-framework/fixtures.git fixtures",
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/prepare.sh"
+                ],
+                "test": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/test.sh"
+                ],
+                "phpcs": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpcs.sh"
+                ],
+                "phpmd": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpmd.sh"
+                ],
+                "phpcbf": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpcbf.sh"
+                ],
+                "phpunit": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpunit.sh"
+                ],
+                "packages": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/packages.sh"
+                ]
+            },
             "license": [
                 "GPL-2.0+"
             ],
@@ -1091,27 +1257,17 @@
                 "framework",
                 "wordpress"
             ],
-            "funding": [
-                {
-                    "url": "https://paypal.me/technote0space",
-                    "type": "custom"
-                }
-            ],
-            "time": "2021-02-15T05:06:47+00:00"
+            "transport-options": {
+                "symlink": true
+            }
         },
         {
             "name": "wp-content-framework/post",
             "version": "v1.0.30",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/wp-content-framework/post.git",
-                "reference": "9e81f2e935c174a12e63917d4240f41221872621"
-            },
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/wp-content-framework/post/zipball/9e81f2e935c174a12e63917d4240f41221872621",
-                "reference": "9e81f2e935c174a12e63917d4240f41221872621",
-                "shasum": ""
+                "type": "path",
+                "url": "packages/wp-content-framework/post",
+                "reference": "680c163d790a7debbc7b30b2b9c8ad523fe01092"
             },
             "require": {
                 "php": ">=5.6.0"
@@ -1124,7 +1280,33 @@
                 "wp-coding-standards/wpcs": "^2.3"
             },
             "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
+            "scripts": {
+                "prepare": [
+                    "mkdir -p ./fixtures/.git",
+                    "chmod -R +w ./fixtures/.git && rm -rdf ./fixtures",
+                    "rm -f ./phpcs.xml ./phpmd.xml ./phpunit.xml",
+                    "git clone --depth=1 https://github.com/wp-content-framework/fixtures.git fixtures",
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/prepare.sh"
+                ],
+                "test": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/test.sh"
+                ],
+                "phpcs": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpcs.sh"
+                ],
+                "phpmd": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpmd.sh"
+                ],
+                "phpcbf": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpcbf.sh"
+                ],
+                "phpunit": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpunit.sh"
+                ],
+                "packages": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/packages.sh"
+                ]
+            },
             "license": [
                 "GPL-2.0+"
             ],
@@ -1141,27 +1323,17 @@
                 "framework",
                 "wordpress"
             ],
-            "funding": [
-                {
-                    "url": "https://paypal.me/technote0space",
-                    "type": "custom"
-                }
-            ],
-            "time": "2021-02-18T12:28:43+00:00"
+            "transport-options": {
+                "symlink": true
+            }
         },
         {
             "name": "wp-content-framework/presenter",
-            "version": "v1.0.32",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/wp-content-framework/presenter.git",
-                "reference": "dbdc509e7089cbe48efa217dd9f72582c874d032"
-            },
+            "version": "v1.0.33",
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/wp-content-framework/presenter/zipball/dbdc509e7089cbe48efa217dd9f72582c874d032",
-                "reference": "dbdc509e7089cbe48efa217dd9f72582c874d032",
-                "shasum": ""
+                "type": "path",
+                "url": "packages/wp-content-framework/presenter",
+                "reference": "b4ba9ebfe4c95393dd06d82233804e2e4b0a39e8"
             },
             "require": {
                 "matthiasmullie/minify": "^1.3",
@@ -1175,7 +1347,33 @@
                 "wp-coding-standards/wpcs": "^2.3"
             },
             "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
+            "scripts": {
+                "prepare": [
+                    "mkdir -p ./fixtures/.git",
+                    "chmod -R +w ./fixtures/.git && rm -rdf ./fixtures",
+                    "rm -f ./phpcs.xml ./phpmd.xml ./phpunit.xml",
+                    "git clone --depth=1 https://github.com/wp-content-framework/fixtures.git fixtures",
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/prepare.sh"
+                ],
+                "test": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/test.sh"
+                ],
+                "phpcs": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpcs.sh"
+                ],
+                "phpmd": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpmd.sh"
+                ],
+                "phpcbf": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpcbf.sh"
+                ],
+                "phpunit": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpunit.sh"
+                ],
+                "packages": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/packages.sh"
+                ]
+            },
             "license": [
                 "GPL-2.0+"
             ],
@@ -1192,27 +1390,17 @@
                 "framework",
                 "wordpress"
             ],
-            "funding": [
-                {
-                    "url": "https://paypal.me/technote0space",
-                    "type": "custom"
-                }
-            ],
-            "time": "2021-02-08T06:44:42+00:00"
+            "transport-options": {
+                "symlink": true
+            }
         },
         {
             "name": "wp-content-framework/session",
             "version": "v1.0.31",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/wp-content-framework/session.git",
-                "reference": "19a5d0b2159351b55a035acd0be3ed6565915008"
-            },
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/wp-content-framework/session/zipball/19a5d0b2159351b55a035acd0be3ed6565915008",
-                "reference": "19a5d0b2159351b55a035acd0be3ed6565915008",
-                "shasum": ""
+                "type": "path",
+                "url": "packages/wp-content-framework/session",
+                "reference": "bd68baf8534f2d365e93ed07fe43ea923fe5cdc0"
             },
             "require": {
                 "php": ">=5.6.0"
@@ -1225,7 +1413,33 @@
                 "wp-coding-standards/wpcs": "^2.3"
             },
             "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
+            "scripts": {
+                "prepare": [
+                    "mkdir -p ./fixtures/.git",
+                    "chmod -R +w ./fixtures/.git && rm -rdf ./fixtures",
+                    "rm -f ./phpcs.xml ./phpmd.xml ./phpunit.xml",
+                    "git clone --depth=1 https://github.com/wp-content-framework/fixtures.git fixtures",
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/prepare.sh"
+                ],
+                "test": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/test.sh"
+                ],
+                "phpcs": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpcs.sh"
+                ],
+                "phpmd": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpmd.sh"
+                ],
+                "phpcbf": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpcbf.sh"
+                ],
+                "phpunit": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpunit.sh"
+                ],
+                "packages": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/packages.sh"
+                ]
+            },
             "license": [
                 "GPL-2.0+"
             ],
@@ -1242,27 +1456,17 @@
                 "framework",
                 "wordpress"
             ],
-            "funding": [
-                {
-                    "url": "https://paypal.me/technote0space",
-                    "type": "custom"
-                }
-            ],
-            "time": "2021-02-20T11:37:03+00:00"
+            "transport-options": {
+                "symlink": true
+            }
         },
         {
             "name": "wp-content-framework/social",
-            "version": "v1.0.35",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/wp-content-framework/social.git",
-                "reference": "5f549c05e720750791df4494d587a24719a4e36c"
-            },
+            "version": "v1.0.36",
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/wp-content-framework/social/zipball/5f549c05e720750791df4494d587a24719a4e36c",
-                "reference": "5f549c05e720750791df4494d587a24719a4e36c",
-                "shasum": ""
+                "type": "path",
+                "url": "packages/wp-content-framework/social",
+                "reference": "4a5d3a6bcac9fa7f07c8e0463fb080b923693f87"
             },
             "require": {
                 "php": ">=5.6.0",
@@ -1276,7 +1480,33 @@
                 "wp-coding-standards/wpcs": "^2.3"
             },
             "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
+            "scripts": {
+                "prepare": [
+                    "mkdir -p ./fixtures/.git",
+                    "chmod -R +w ./fixtures/.git && rm -rdf ./fixtures",
+                    "rm -f ./phpcs.xml ./phpmd.xml ./phpunit.xml",
+                    "git clone --depth=1 https://github.com/wp-content-framework/fixtures.git fixtures",
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/prepare.sh"
+                ],
+                "test": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/test.sh"
+                ],
+                "phpcs": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpcs.sh"
+                ],
+                "phpmd": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpmd.sh"
+                ],
+                "phpcbf": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpcbf.sh"
+                ],
+                "phpunit": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpunit.sh"
+                ],
+                "packages": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/packages.sh"
+                ]
+            },
             "license": [
                 "GPL-2.0+"
             ],
@@ -1293,27 +1523,17 @@
                 "framework",
                 "wordpress"
             ],
-            "funding": [
-                {
-                    "url": "https://paypal.me/technote0space",
-                    "type": "custom"
-                }
-            ],
-            "time": "2021-02-07T04:53:33+00:00"
+            "transport-options": {
+                "symlink": true
+            }
         },
         {
             "name": "wp-content-framework/test",
-            "version": "v1.0.46",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/wp-content-framework/test.git",
-                "reference": "0f657b526f8669835169c13f9614b0e70555a4bb"
-            },
+            "version": "v1.0.47",
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/wp-content-framework/test/zipball/0f657b526f8669835169c13f9614b0e70555a4bb",
-                "reference": "0f657b526f8669835169c13f9614b0e70555a4bb",
-                "shasum": ""
+                "type": "path",
+                "url": "packages/wp-content-framework/test",
+                "reference": "76e46621b6db447c35c8fd9d014adc0d97df6bcb"
             },
             "require": {
                 "php": ">=5.6.0",
@@ -1327,7 +1547,33 @@
                 "wp-coding-standards/wpcs": "^2.3"
             },
             "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
+            "scripts": {
+                "prepare": [
+                    "mkdir -p ./fixtures/.git",
+                    "chmod -R +w ./fixtures/.git && rm -rdf ./fixtures",
+                    "rm -f ./phpcs.xml ./phpmd.xml ./phpunit.xml",
+                    "git clone --depth=1 https://github.com/wp-content-framework/fixtures.git fixtures",
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/prepare.sh"
+                ],
+                "test": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/test.sh"
+                ],
+                "phpcs": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpcs.sh"
+                ],
+                "phpmd": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpmd.sh"
+                ],
+                "phpcbf": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpcbf.sh"
+                ],
+                "phpunit": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpunit.sh"
+                ],
+                "packages": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/packages.sh"
+                ]
+            },
             "license": [
                 "GPL-2.0+"
             ],
@@ -1344,27 +1590,17 @@
                 "framework",
                 "wordpress"
             ],
-            "funding": [
-                {
-                    "url": "https://paypal.me/technote0space",
-                    "type": "custom"
-                }
-            ],
-            "time": "2021-02-15T05:06:53+00:00"
+            "transport-options": {
+                "symlink": true
+            }
         },
         {
             "name": "wp-content-framework/update",
             "version": "v1.0.43",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/wp-content-framework/update.git",
-                "reference": "669ded06a9903daf5c1264e479fd032751c67dbe"
-            },
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/wp-content-framework/update/zipball/669ded06a9903daf5c1264e479fd032751c67dbe",
-                "reference": "669ded06a9903daf5c1264e479fd032751c67dbe",
-                "shasum": ""
+                "type": "path",
+                "url": "packages/wp-content-framework/update",
+                "reference": "b169f1fc62a9781891571c2419481e17eea0138b"
             },
             "require": {
                 "php": ">=5.6.0",
@@ -1378,7 +1614,33 @@
                 "wp-coding-standards/wpcs": "^2.3"
             },
             "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
+            "scripts": {
+                "prepare": [
+                    "mkdir -p ./fixtures/.git",
+                    "chmod -R +w ./fixtures/.git && rm -rdf ./fixtures",
+                    "rm -f ./phpcs.xml ./phpmd.xml ./phpunit.xml",
+                    "git clone --depth=1 https://github.com/wp-content-framework/fixtures.git fixtures",
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/prepare.sh"
+                ],
+                "test": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/test.sh"
+                ],
+                "phpcs": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpcs.sh"
+                ],
+                "phpmd": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpmd.sh"
+                ],
+                "phpcbf": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpcbf.sh"
+                ],
+                "phpunit": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpunit.sh"
+                ],
+                "packages": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/packages.sh"
+                ]
+            },
             "license": [
                 "GPL-2.0+"
             ],
@@ -1395,27 +1657,17 @@
                 "framework",
                 "wordpress"
             ],
-            "funding": [
-                {
-                    "url": "https://paypal.me/technote0space",
-                    "type": "custom"
-                }
-            ],
-            "time": "2021-02-20T11:37:00+00:00"
+            "transport-options": {
+                "symlink": true
+            }
         },
         {
             "name": "wp-content-framework/update_check",
             "version": "v1.0.30",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/wp-content-framework/update_check.git",
-                "reference": "2168aabb7f875f5c07bd512c982b2c18ffb97a30"
-            },
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/wp-content-framework/update_check/zipball/2168aabb7f875f5c07bd512c982b2c18ffb97a30",
-                "reference": "2168aabb7f875f5c07bd512c982b2c18ffb97a30",
-                "shasum": ""
+                "type": "path",
+                "url": "packages/wp-content-framework/update_check",
+                "reference": "9e9ca16a1798bbc5ebac6967e0d5a055d8d12c44"
             },
             "require": {
                 "php": ">=5.6.0",
@@ -1429,7 +1681,33 @@
                 "wp-coding-standards/wpcs": "^2.3"
             },
             "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
+            "scripts": {
+                "prepare": [
+                    "mkdir -p ./fixtures/.git",
+                    "chmod -R +w ./fixtures/.git && rm -rdf ./fixtures",
+                    "rm -f ./phpcs.xml ./phpmd.xml ./phpunit.xml",
+                    "git clone --depth=1 https://github.com/wp-content-framework/fixtures.git fixtures",
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/prepare.sh"
+                ],
+                "test": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/test.sh"
+                ],
+                "phpcs": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpcs.sh"
+                ],
+                "phpmd": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpmd.sh"
+                ],
+                "phpcbf": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpcbf.sh"
+                ],
+                "phpunit": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpunit.sh"
+                ],
+                "packages": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/packages.sh"
+                ]
+            },
             "license": [
                 "GPL-2.0+"
             ],
@@ -1446,27 +1724,17 @@
                 "framework",
                 "wordpress"
             ],
-            "funding": [
-                {
-                    "url": "https://paypal.me/technote0space",
-                    "type": "custom"
-                }
-            ],
-            "time": "2021-02-17T02:26:00+00:00"
+            "transport-options": {
+                "symlink": true
+            }
         },
         {
             "name": "wp-content-framework/upgrade",
-            "version": "v1.0.31",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/wp-content-framework/upgrade.git",
-                "reference": "c81d3fd860c404c8de8e5599d3886bc4c1cc44f9"
-            },
+            "version": "v1.0.32",
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/wp-content-framework/upgrade/zipball/c81d3fd860c404c8de8e5599d3886bc4c1cc44f9",
-                "reference": "c81d3fd860c404c8de8e5599d3886bc4c1cc44f9",
-                "shasum": ""
+                "type": "path",
+                "url": "packages/wp-content-framework/upgrade",
+                "reference": "071a276df5e330a8eed57d7d3372cc48c6cb1aaa"
             },
             "require": {
                 "php": ">=5.6.0"
@@ -1479,7 +1747,33 @@
                 "wp-coding-standards/wpcs": "^2.3"
             },
             "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
+            "scripts": {
+                "prepare": [
+                    "mkdir -p ./fixtures/.git",
+                    "chmod -R +w ./fixtures/.git && rm -rdf ./fixtures",
+                    "rm -f ./phpcs.xml ./phpmd.xml ./phpunit.xml",
+                    "git clone --depth=1 https://github.com/wp-content-framework/fixtures.git fixtures",
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/prepare.sh"
+                ],
+                "test": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/test.sh"
+                ],
+                "phpcs": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpcs.sh"
+                ],
+                "phpmd": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpmd.sh"
+                ],
+                "phpcbf": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpcbf.sh"
+                ],
+                "phpunit": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpunit.sh"
+                ],
+                "packages": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/packages.sh"
+                ]
+            },
             "license": [
                 "GPL-2.0+"
             ],
@@ -1496,27 +1790,17 @@
                 "framework",
                 "wordpress"
             ],
-            "funding": [
-                {
-                    "url": "https://paypal.me/technote0space",
-                    "type": "custom"
-                }
-            ],
-            "time": "2021-02-07T09:12:07+00:00"
+            "transport-options": {
+                "symlink": true
+            }
         },
         {
             "name": "wp-content-framework/view",
-            "version": "v1.0.41",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/wp-content-framework/view.git",
-                "reference": "bb70fdab17d905768b79ea0598d72a2b234ab52b"
-            },
+            "version": "v1.0.42",
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/wp-content-framework/view/zipball/bb70fdab17d905768b79ea0598d72a2b234ab52b",
-                "reference": "bb70fdab17d905768b79ea0598d72a2b234ab52b",
-                "shasum": ""
+                "type": "path",
+                "url": "packages/wp-content-framework/view",
+                "reference": "08112f61ababb83eae7609e3f3f0e83b91d047ae"
             },
             "require": {
                 "php": ">=5.6.0",
@@ -1530,7 +1814,33 @@
                 "wp-coding-standards/wpcs": "^2.3"
             },
             "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
+            "scripts": {
+                "prepare": [
+                    "mkdir -p ./fixtures/.git",
+                    "chmod -R +w ./fixtures/.git && rm -rdf ./fixtures",
+                    "rm -f ./phpcs.xml ./phpmd.xml ./phpunit.xml",
+                    "git clone --depth=1 https://github.com/wp-content-framework/fixtures.git fixtures",
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/prepare.sh"
+                ],
+                "test": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/test.sh"
+                ],
+                "phpcs": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpcs.sh"
+                ],
+                "phpmd": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpmd.sh"
+                ],
+                "phpcbf": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpcbf.sh"
+                ],
+                "phpunit": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/php/phpunit.sh"
+                ],
+                "packages": [
+                    "WORKSPACE=${WORKSPACE:-$(cd $(dirname $0); pwd)} bash ./fixtures/bin/packages.sh"
+                ]
+            },
             "license": [
                 "GPL-2.0+"
             ],
@@ -1547,13 +1857,9 @@
                 "framework",
                 "wordpress"
             ],
-            "funding": [
-                {
-                    "url": "https://paypal.me/technote0space",
-                    "type": "custom"
-                }
-            ],
-            "time": "2021-02-05T13:17:41+00:00"
+            "transport-options": {
+                "symlink": true
+            }
         },
         {
             "name": "yahnis-elsts/plugin-update-checker",
@@ -1645,40 +1951,26 @@
                 "Xdebug",
                 "performance"
             ],
-            "funding": [
-                {
-                    "url": "https://packagist.com",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/composer",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/composer/composer",
-                    "type": "tidelift"
-                }
-            ],
             "time": "2020-11-13T08:04:11+00:00"
         },
         {
             "name": "dealerdirect/phpcodesniffer-composer-installer",
-            "version": "v0.5.0",
+            "version": "v0.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Dealerdirect/phpcodesniffer-composer-installer.git",
-                "reference": "e749410375ff6fb7a040a68878c656c2e610b132"
+                "reference": "fe390591e0241955f22eb9ba327d137e501c771c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Dealerdirect/phpcodesniffer-composer-installer/zipball/e749410375ff6fb7a040a68878c656c2e610b132",
-                "reference": "e749410375ff6fb7a040a68878c656c2e610b132",
+                "url": "https://api.github.com/repos/Dealerdirect/phpcodesniffer-composer-installer/zipball/fe390591e0241955f22eb9ba327d137e501c771c",
+                "reference": "fe390591e0241955f22eb9ba327d137e501c771c",
                 "shasum": ""
             },
             "require": {
-                "composer-plugin-api": "^1.0",
-                "php": "^5.3|^7",
-                "squizlabs/php_codesniffer": "^2|^3"
+                "composer-plugin-api": "^1.0 || ^2.0",
+                "php": ">=5.3",
+                "squizlabs/php_codesniffer": "^2.0 || ^3.0 || ^4.0"
             },
             "require-dev": {
                 "composer/composer": "*",
@@ -1725,7 +2017,7 @@
                 "stylecheck",
                 "tests"
             ],
-            "time": "2018-10-26T13:21:45+00:00"
+            "time": "2020-12-07T18:04:37+00:00"
         },
         {
             "name": "doctrine/instantiator",
@@ -1871,12 +2163,6 @@
                 "BSD-3-Clause"
             ],
             "description": "Official version of pdepend to be handled with Composer",
-            "funding": [
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/pdepend/pdepend",
-                    "type": "tidelift"
-                }
-            ],
             "time": "2020-06-20T10:53:13+00:00"
         },
         {
@@ -2254,12 +2540,6 @@
                 "pdepend",
                 "phpmd",
                 "pmd"
-            ],
-            "funding": [
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/phpmd/phpmd",
-                    "type": "tidelift"
-                }
             ],
             "time": "2020-09-23T22:06:32+00:00"
         },
@@ -3125,16 +3405,6 @@
                 }
             ],
             "description": "Prevents installation of composer packages with known security vulnerabilities: no API, simply require it",
-            "funding": [
-                {
-                    "url": "https://github.com/Ocramius",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/roave/security-advisories",
-                    "type": "tidelift"
-                }
-            ],
             "time": "2021-02-18T21:02:27+00:00"
         },
         {
@@ -3180,12 +3450,6 @@
             ],
             "description": "Looks up which function or method a line of code belongs to",
             "homepage": "https://github.com/sebastianbergmann/code-unit-reverse-lookup/",
-            "funding": [
-                {
-                    "url": "https://github.com/sebastianbergmann",
-                    "type": "github"
-                }
-            ],
             "time": "2020-11-30T08:15:22+00:00"
         },
         {
@@ -3764,20 +4028,6 @@
             ],
             "description": "Symfony Config Component",
             "homepage": "https://symfony.com",
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
-            ],
             "time": "2020-10-24T10:57:07+00:00"
         },
         {
@@ -3844,20 +4094,6 @@
             ],
             "description": "Symfony DependencyInjection Component",
             "homepage": "https://symfony.com",
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
-            ],
             "time": "2020-10-24T10:57:07+00:00"
         },
         {
@@ -3903,20 +4139,6 @@
             ],
             "description": "Symfony Filesystem Component",
             "homepage": "https://symfony.com",
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
-            ],
             "time": "2020-10-24T10:57:07+00:00"
         },
         {
@@ -3979,20 +4201,6 @@
                 "polyfill",
                 "portable"
             ],
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
-            ],
             "time": "2020-10-23T09:01:57+00:00"
         },
         {
@@ -4047,20 +4255,6 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
-            ],
             "time": "2020-10-24T10:57:07+00:00"
         },
         {
@@ -4160,11 +4354,33 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "stability-flags": {
+        "wp-content-framework/core": 20,
+        "wp-content-framework/common": 20,
+        "wp-content-framework/cache": 20,
+        "wp-content-framework/db": 20,
+        "wp-content-framework/presenter": 20,
+        "wp-content-framework/view": 20,
+        "wp-content-framework/cron": 20,
+        "wp-content-framework/controller": 20,
+        "wp-content-framework/admin": 20,
+        "wp-content-framework/api": 20,
+        "wp-content-framework/update": 20,
+        "wp-content-framework/update_check": 20,
+        "wp-content-framework/upgrade": 20,
+        "wp-content-framework/mail": 20,
+        "wp-content-framework/log": 20,
+        "wp-content-framework/post": 20,
+        "wp-content-framework/device": 20,
+        "wp-content-framework/editor": 20,
+        "wp-content-framework/social": 20,
+        "wp-content-framework/session": 20,
+        "wp-content-framework/custom_post": 20,
+        "wp-content-framework/test": 20,
         "roave/security-advisories": 20
     },
-    "prefer-stable": false,
+    "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
         "php": ">=5.6"
@@ -4172,6 +4388,5 @@
     "platform-dev": [],
     "platform-overrides": {
         "php": "5.6"
-    },
-    "plugin-api-version": "1.1.0"
+    }
 }

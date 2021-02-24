@@ -1,7 +1,7 @@
 {
   "name": "wp-content-framework/0-framework-test",
   "description": "Test plugin for WP Content Framework.",
-  "type": "wordpress-plugin",
+  "type": "project",
   "license": "GPL-2.0+",
   "authors": [
     {
@@ -10,40 +10,198 @@
       "homepage": "https://technote.space"
     }
   ],
+  "minimum-stability": "dev",
+  "prefer-stable": true,
   "require": {
-    "wp-content-framework/core": "^1.0",
-    "wp-content-framework/common": "^1.0",
-    "wp-content-framework/cache": "^1.0",
-    "wp-content-framework/db": "^1.0",
-    "wp-content-framework/presenter": "^1.0",
-    "wp-content-framework/view": "^1.0",
-    "wp-content-framework/cron": "^1.0",
-    "wp-content-framework/controller": "^1.0",
-    "wp-content-framework/admin": "^1.0",
-    "wp-content-framework/api": "^1.0",
-    "wp-content-framework/update": "^1.0",
-    "wp-content-framework/update_check": "^1.0",
-    "wp-content-framework/upgrade": "^1.0",
-    "wp-content-framework/mail": "^1.0",
-    "wp-content-framework/log": "^1.0",
-    "wp-content-framework/post": "^1.0",
-    "wp-content-framework/device": "^1.0",
-    "wp-content-framework/editor": "^1.0",
-    "wp-content-framework/social": "^1.0",
-    "wp-content-framework/session": "^1.0",
-    "wp-content-framework/custom_post": "^1.0",
-    "wp-content-framework/test": "^1.0",
+    "wp-content-framework/core": "@dev",
+    "wp-content-framework/common": "@dev",
+    "wp-content-framework/cache": "@dev",
+    "wp-content-framework/db": "@dev",
+    "wp-content-framework/presenter": "@dev",
+    "wp-content-framework/view": "@dev",
+    "wp-content-framework/cron": "@dev",
+    "wp-content-framework/controller": "@dev",
+    "wp-content-framework/admin": "@dev",
+    "wp-content-framework/api": "@dev",
+    "wp-content-framework/update": "@dev",
+    "wp-content-framework/update_check": "@dev",
+    "wp-content-framework/upgrade": "@dev",
+    "wp-content-framework/mail": "@dev",
+    "wp-content-framework/log": "@dev",
+    "wp-content-framework/post": "@dev",
+    "wp-content-framework/device": "@dev",
+    "wp-content-framework/editor": "@dev",
+    "wp-content-framework/social": "@dev",
+    "wp-content-framework/session": "@dev",
+    "wp-content-framework/custom_post": "@dev",
+    "wp-content-framework/test": "@dev",
     "php": ">=5.6"
   },
   "require-dev": {
-    "squizlabs/php_codesniffer": "*",
-    "wp-coding-standards/wpcs": "*",
-    "phpmd/phpmd": "^2.8",
-    "phpcompatibility/phpcompatibility-wp": "*",
-    "dealerdirect/phpcodesniffer-composer-installer": "^0.5.0",
+    "dealerdirect/phpcodesniffer-composer-installer": "^0.7.1",
+    "phpmd/phpmd": "^2.9",
+    "squizlabs/php_codesniffer": "^3.5",
+    "wp-coding-standards/wpcs": "^2.3",
+    "phpcompatibility/phpcompatibility-wp": "^2.1",
     "roave/security-advisories": "dev-master",
     "phpunit/phpunit": "^4.8 || ^5.7 || ^7.5"
   },
+  "repositories": [
+    {
+      "type": "path",
+      "url": "packages/wp-content-framework/core",
+      "options": {
+        "symlink": true
+      }
+    },
+    {
+      "type": "path",
+      "url": "packages/wp-content-framework/common",
+      "options": {
+        "symlink": true
+      }
+    },
+    {
+      "type": "path",
+      "url": "packages/wp-content-framework/cache",
+      "options": {
+        "symlink": true
+      }
+    },
+    {
+      "type": "path",
+      "url": "packages/wp-content-framework/db",
+      "options": {
+        "symlink": true
+      }
+    },
+    {
+      "type": "path",
+      "url": "packages/wp-content-framework/presenter",
+      "options": {
+        "symlink": true
+      }
+    },
+    {
+      "type": "path",
+      "url": "packages/wp-content-framework/view",
+      "options": {
+        "symlink": true
+      }
+    },
+    {
+      "type": "path",
+      "url": "packages/wp-content-framework/cron",
+      "options": {
+        "symlink": true
+      }
+    },
+    {
+      "type": "path",
+      "url": "packages/wp-content-framework/controller",
+      "options": {
+        "symlink": true
+      }
+    },
+    {
+      "type": "path",
+      "url": "packages/wp-content-framework/admin",
+      "options": {
+        "symlink": true
+      }
+    },
+    {
+      "type": "path",
+      "url": "packages/wp-content-framework/api",
+      "options": {
+        "symlink": true
+      }
+    },
+    {
+      "type": "path",
+      "url": "packages/wp-content-framework/update",
+      "options": {
+        "symlink": true
+      }
+    },
+    {
+      "type": "path",
+      "url": "packages/wp-content-framework/update_check",
+      "options": {
+        "symlink": true
+      }
+    },
+    {
+      "type": "path",
+      "url": "packages/wp-content-framework/upgrade",
+      "options": {
+        "symlink": true
+      }
+    },
+    {
+      "type": "path",
+      "url": "packages/wp-content-framework/mail",
+      "options": {
+        "symlink": true
+      }
+    },
+    {
+      "type": "path",
+      "url": "packages/wp-content-framework/log",
+      "options": {
+        "symlink": true
+      }
+    },
+    {
+      "type": "path",
+      "url": "packages/wp-content-framework/post",
+      "options": {
+        "symlink": true
+      }
+    },
+    {
+      "type": "path",
+      "url": "packages/wp-content-framework/device",
+      "options": {
+        "symlink": true
+      }
+    },
+    {
+      "type": "path",
+      "url": "packages/wp-content-framework/editor",
+      "options": {
+        "symlink": true
+      }
+    },
+    {
+      "type": "path",
+      "url": "packages/wp-content-framework/social",
+      "options": {
+        "symlink": true
+      }
+    },
+    {
+      "type": "path",
+      "url": "packages/wp-content-framework/session",
+      "options": {
+        "symlink": true
+      }
+    },
+    {
+      "type": "path",
+      "url": "packages/wp-content-framework/custom_post",
+      "options": {
+        "symlink": true
+      }
+    },
+    {
+      "type": "path",
+      "url": "packages/wp-content-framework/test",
+      "options": {
+        "symlink": true
+      }
+    }
+  ],
   "scripts": {
     "setup": [
       "@prepare",
@@ -96,6 +254,30 @@
     "jest:update": [
       "yarn --cwd assets/js cover:update"
     ],
+    "prepare:packages": [
+      "composer prepare -d packages/wp-content-framework/core",
+      "composer prepare -d packages/wp-content-framework/common",
+      "composer prepare -d packages/wp-content-framework/cache",
+      "composer prepare -d packages/wp-content-framework/db",
+      "composer prepare -d packages/wp-content-framework/presenter",
+      "composer prepare -d packages/wp-content-framework/view",
+      "composer prepare -d packages/wp-content-framework/cron",
+      "composer prepare -d packages/wp-content-framework/controller",
+      "composer prepare -d packages/wp-content-framework/admin",
+      "composer prepare -d packages/wp-content-framework/api",
+      "composer prepare -d packages/wp-content-framework/update",
+      "composer prepare -d packages/wp-content-framework/update_check",
+      "composer prepare -d packages/wp-content-framework/upgrade",
+      "composer prepare -d packages/wp-content-framework/mail",
+      "composer prepare -d packages/wp-content-framework/log",
+      "composer prepare -d packages/wp-content-framework/post",
+      "composer prepare -d packages/wp-content-framework/device",
+      "composer prepare -d packages/wp-content-framework/editor",
+      "composer prepare -d packages/wp-content-framework/social",
+      "composer prepare -d packages/wp-content-framework/session",
+      "composer prepare -d packages/wp-content-framework/custom_post",
+      "composer prepare -d packages/wp-content-framework/test"
+    ],
     "bin:wp-test": "TRAVIS_BUILD_DIR=${TRAVIS_BUILD_DIR:-$(cd $(dirname $0); pwd)} ./travis-ci/bin/php/wp-test.sh",
     "bin:wp-test-p": "TRAVIS_BUILD_DIR=${TRAVIS_BUILD_DIR:-$(cd $(dirname $0); pwd)} ACTIVATE_POPULAR_PLUGINS=1 ./travis-ci/bin/php/wp-test.sh",
     "bin:phpcs": "TRAVIS_BUILD_DIR=${TRAVIS_BUILD_DIR:-$(cd $(dirname $0); pwd)} ./travis-ci/bin/php/phpcs.sh",
@@ -111,7 +293,9 @@
       "rm -f ./tests/bootstrap.php ./phpcs.xml ./phpmd.xml phpunit.xml",
       "git clone --depth=1 https://github.com/wp-content-framework/travis-ci.git travis-ci"
     ],
-    "bin:prepare": "TRAVIS_BUILD_DIR=${TRAVIS_BUILD_DIR:-$(cd $(dirname $0); pwd)} ACTIVATE_POPULAR_PLUGINS=1 bash ./travis-ci/bin/prepare.sh",
+    "bin:prepare": [
+      "TRAVIS_BUILD_DIR=${TRAVIS_BUILD_DIR:-$(cd $(dirname $0); pwd)} ACTIVATE_POPULAR_PLUGINS=1 bash ./travis-ci/bin/prepare.sh"
+    ],
     "bin:update": [
       "TRAVIS_BUILD_DIR=${TRAVIS_BUILD_DIR:-$(cd $(dirname $0); pwd)} bash ./travis-ci/bin/update/composer.sh",
       "TRAVIS_BUILD_DIR=${TRAVIS_BUILD_DIR:-$(cd $(dirname $0); pwd)} bash ./travis-ci/bin/update/package.sh"
