@@ -49,7 +49,7 @@ WP Content Framework テスト用
   - GitHub releases
 
 ## Dependency
-[Scripts for Travis CI](https://github.com/wp-content-framework/travis-ci)
+[Scripts for Travis CI](https://github.com/wp-content-framework/ci-helper)
 
 ## Author
 [GitHub (Technote)](https://github.com/technote-space)  
