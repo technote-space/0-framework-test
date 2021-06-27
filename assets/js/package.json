@@ -22,14 +22,14 @@
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.14.6",
-    "@babel/preset-env": "^7.14.5",
-    "babel-jest": "^27.0.2",
+    "@babel/preset-env": "^7.14.7",
+    "babel-jest": "^27.0.5",
     "babel-loader": "^8.2.2",
     "duplicate-package-checker-webpack-plugin": "^3.0.0",
     "eslint": "^7.29.0",
-    "jest": "^27.0.4",
+    "jest": "^27.0.5",
     "speed-measure-webpack-plugin": "^1.5.0",
-    "webpack": "^5.39.1",
+    "webpack": "^5.40.0",
     "webpack-cli": "^4.7.2"
   }
 }
